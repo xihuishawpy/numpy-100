@@ -5,7 +5,7 @@ import mdutils
 
 def ktx_to_dict(input_file, keystarter='<'):
     """ parsing keyed text to a python dictionary. """
-    answer = dict()
+    answer = {}
 
     with open(input_file, 'r+', encoding='utf-8') as f:
         lines = f.readlines()
@@ -19,7 +19,7 @@ def ktx_to_dict(input_file, keystarter='<'):
             val += line
 
         if k:
-            answer.update({k: val.strip()})
+            answer[k] = val.strip()
 
     return answer
 
